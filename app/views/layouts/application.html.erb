@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kobegeek1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+      <h1>Kobegeek1</h1>
+      <div class="header-list">
+      <ul>
+        <a><%= link_to "ログイン", students_path %></a>
+        <a><%= link_to "新規登録", new_user_registration_path %></a>
+        <a><%= link_to '投稿ページへ', new_student_path%></a>
+        <a><%= link_to '一覧ページへ', students_path%></a>
+        <a><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></a>
+      </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+
+
+  </body>
+</html>

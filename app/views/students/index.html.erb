@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'students', :media => "all" %>
+
+<h2>投稿一覧</h2>
+<br>
+
+<div class="students-container">
+    <% @students.each do |t| %>
+        <div class="student">
+            <p><%= t.name %></p>
+            <p><%= t.profile %></p>
+            <p><%= t.mentor %></p>
+            <p><%= t.grade %></p>
+            <p><%= t.user.email %></p>
+            <p><%= link_to "詳細へ", student_path(t.id) %></p>
+            <p><%= link_to "編集する", edit_student_path(t.id) %></p>
+            <p><%= button_to '削除する', student_path(t.id), method: :delete%></p>
+        </div>
+    <% end %>
+</div>

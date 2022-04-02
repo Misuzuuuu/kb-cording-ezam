@@ -1,0 +1,11 @@
+<h2>詳細ページ</h2>
+<br>
+<div class="student">
+    <p><%= @student.name%></p>
+    <p><%= @student.profile %></p>
+    <p><%= @student.mentor %></p>
+    <p><%= @student.grade %></p>
+</div> 
+
+<%= link_to '投稿ページへ', new_student_path%>
+<%= link_to '一覧ページへ', students_path%>
